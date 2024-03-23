@@ -6,6 +6,7 @@ import { AiOutlineMail } from "react-icons/ai";
 import { FaRegAddressBook } from "react-icons/fa";
  import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { saveJobApplication } from "../../Utility/localStorage";
   
 const JobDetails = () => {
   const jobs = useLoaderData();
@@ -13,9 +14,10 @@ const JobDetails = () => {
   //  console.log(id, jobs)
   const idInt = parseInt(id);
   const job = jobs.find((job) => job.id === idInt);
-    console.log(job);
+    // console.log(job);
     
     const handleApplyJob = () => {
+        saveJobApplication(idInt);
         toast('You have applied successfully')
     }
 
