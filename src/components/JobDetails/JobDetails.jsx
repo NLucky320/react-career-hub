@@ -4,14 +4,20 @@ import { MdOutlineSubtitles } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import { FaRegAddressBook } from "react-icons/fa";
-
+ import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+  
 const JobDetails = () => {
   const jobs = useLoaderData();
   const { id } = useParams();
   //  console.log(id, jobs)
   const idInt = parseInt(id);
   const job = jobs.find((job) => job.id === idInt);
-  console.log(job);
+    console.log(job);
+    
+    const handleApplyJob = () => {
+        toast('You have applied successfully')
+    }
 
   return (
     <div>
@@ -92,9 +98,10 @@ const JobDetails = () => {
             </div>
                   </div>
                   <div className="py-4 items-center text-center">
-               <button className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-[20px] text-white font-extrabold w-full"> Apply Now</button>
+               <button onClick={handleApplyJob} className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-[20px] text-white font-extrabold w-full"> Apply Now</button>
           </div>
-        </div>
+              </div>
+                  <ToastContainer />
       </div>
       
     </div>
