@@ -4,8 +4,8 @@ import { CiDollar } from "react-icons/ci";
 const Job = ({ job }) => {
   console.log(job);
   return (
-    <div className="card bg-base-100 shadow-xl">
-      <figure>
+    <div className="card bg-base-100 shadow-xl ">
+      <figure className="p-4">
         <img src={job.logo} alt="Shoes" />
       </figure>
       <div className="card-body">
@@ -26,7 +26,7 @@ const Job = ({ job }) => {
           </div>
         </div>
         <div className="card-actions justify-start">
-          <button className="btn btn-primary text-[20px] font-extrabold"> View Details</button>
+          <button className="btn bg-gradient-to-r from-[#7E90FE] to-[#9873FF] text-[20px] text-white font-extrabold"> View Details</button>
         </div>
       </div>
     </div>
